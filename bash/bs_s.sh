@@ -8,5 +8,3 @@ read name
 echo "#!/bin/bash" > ./$name.sh
 
 chmod 777 ./$name.sh
-
-$(open) ./$name.sh
