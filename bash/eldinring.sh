@@ -36,7 +36,7 @@ echo "Your first beast approaches. Prepare to battle. Pick a number between 0 an
 
 read tarnished
 
-if [[ $beast == $tarnished ]]; then
+if [[ $beast == $tarnished || $tarnished == "storm" ]]; then
 	echo "Beast VANQUISHED"
 else
 	echo  "You die!"
@@ -48,7 +48,7 @@ echo "Boss battle. Its Margit. Choose a number between 0 and 10"
 
 read tarnished
 
-if [[ $beast == $tarnished || $tarnished == "coffee" ]]; then
+if [[ $beast == $tarnished || $tarnished == "storm" ]]; then
         echo "You killed Margit"
 
 elif [[ $USER == "henkel" ]]; then
