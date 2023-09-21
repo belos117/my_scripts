@@ -15,11 +15,23 @@ echo "What does your script do"
 
 	read description
 
+echo "Author"
+
+	read author
+
 echo "#!/bin/bash" > ./$name.sh
 
 echo "#Description: $description" >> ./$name.sh
 
-echo "#Author: $USER" >> ./$name.sh
+echo
+	if [[ $author == "" ]]; then
+
+		echo "#Author: Silent~Storm Henkel" >> ./$name.sh
+	else
+
+		echo"#Author: $author" >> ./$name.sh
+
+	fi
 
 echo "#Date: $(date)" >> ./$name.sh
 
