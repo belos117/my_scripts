@@ -1,9 +1,9 @@
 #!/bin/bash
-#Bash Script to create an executable bash file
+#Bash Script to create a file with specified permissions
 #Author: Silent~Storm Henkel
 #Date: 20/09/2023
 
-echo "This is a bash script to create an executable file"
+echo "This is a bash script to create a file with specified permissions"
 
 sleep 1
 
@@ -20,8 +20,14 @@ echo "Select the file type:
 1 - Bash
 2 - Python
 3 - Perl"
-
 read type
+
+echo "Give rwx permission to:
+1 - All
+2 - User
+3 - Groups
+4 - Others"
+read permissions
 
 case $type in
     1)
@@ -59,7 +65,16 @@ echo
 
 echo "#Date: $(date)" >> ./$name.$ext
 
-chmod 700 ./$name.$ext
+if [[ $permissions == 1 ]]; then
+  chmod 777 ./$name.$ext
+elif [[ $permissions == 2 ]]; then
+  chmod 700 ./$name.$ext
+elif [[ $permissions == 3 ]]; then
+  chmod 070 ./$name.$ext
+elif [[ $permissions == 4 ]]; then
+  chmod 007 ./$name.$ext
+else echo "Your selection is invalid, please select again"
+fi
 
 sleep 2
 
