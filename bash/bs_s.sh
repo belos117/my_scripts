@@ -24,9 +24,10 @@ read type
 
 echo "Give rwx permission to:
 1 - All
-2 - User
-3 - Groups
-4 - Others"
+2 - Users only
+3 - Groups only
+4 - Users and Groups only
+5 - Others"
 read permissions
 
 case $type in
@@ -72,6 +73,8 @@ elif [[ $permissions == 2 ]]; then
 elif [[ $permissions == 3 ]]; then
   chmod 070 ./$name.$ext
 elif [[ $permissions == 4 ]]; then
+  chmod 770 ./$name.$ext
+elif [[ $permissions == 5 ]]; then
   chmod 007 ./$name.$ext
 else echo "Your selection is invalid, please select again"
 fi
