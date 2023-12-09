@@ -1,4 +1,4 @@
-#!/bin/bash
+code #!/bin/bash
 # Bash Script to create a script file with specified permissions
 
 # Function to get user input with a prompt
